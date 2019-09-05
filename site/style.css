@@ -2,82 +2,178 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Andale Mono', monospace;
+}
+ul{
+    list-style: none;
 }
 .container{
     width: 60vw;
     height: 100vh;
 
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 200px 1fr 1fr 1fr 200px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 200px 1fr 1fr 200px;
 
-    grid-gap: 10px;
+    justify-content: center;
+    align-items: center;
+
+    grid-gap: 2vw;
 }
 
 .item{
     background-color: yellowgreen;
-    height: 360px;
+    height: auto;
+    height: 300px;
+    width: 14vw;
     display: flex;
     flex-wrap: wrap;
+    border: 4px solid black;
+    border-radius: 40px 40px 0 0;
+    text-transform: uppercase;
 }
 .item_top{
     position: relative;
     width: 100%;
-    height: 50%;
-}
-.item_image{
-    z-index: 0;
-    opacity: 0.8;
+    height: 55%;
+    background-image: url(car2.jpeg);
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    background-size: 110%;
+    overflow: hidden;
+    border-radius: 35px 35px 0 0;
 }
 .item_price{
+    background: white;
+    color: black;
+    padding: 10px;
+    border-radius: 0 35px 0 15px;
     position: absolute;
-    top: 20px;
-    left: 50%;
+    top: 0;
+    right: 0;
     font-size: 1.2rem;
-    color: blue;
+    opacity: 0.6
 }
-.item1{
-    background-color: lightblue;
+.item_color{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 10px;
+    background: white;
+    color: black;
+    border-radius: 15px 0 0  0;
+    opacity: 0.6;
+    list-style: none;
+    font-size: 0.9rem;
 }
-.item2{
+.item_top li{
+    display: inline-block;
+}
+.item_top li:hover{
+    color: rebeccapurple;
+    cursor: pointer;
+}
+.item_bot{
+    width: 100%;
+    height: 45%;
+    background: rgb(53, 51, 51);
+    color: white;
+    display: flex;
+}
+.item_sidebar{
+    width: 30%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    list-style: none;
+}
+.item_sidebar li{
+    width: 100%;
+    border-bottom: 2px solid black;
+    height: 33%;
+    transition: background 0.5s, width .5s, padding-left .5s, border-bottom .5s, color .5s;
+    padding-top: 15%;
+    padding-left: 10px;
+}
+.opis{
+    width: 70%;height: 100%;
+    font-size: 80%;
+    text-align: right;
+    padding: 10px;
+}
+.item_sidebar li:hover:not(.kup){
+    background: grey;
+    width: 120%;
+    padding-left: 16px;
+    border-bottom: 3px solid white;
+    color: black;
+}
+.kup{
+    height: 34%;
+    letter-spacing: 3px;
+    font-weight: bolder;
+    font-size: 135%;
+}
+.kup:hover{
+    background: rgba(17, 255, 17, 0.507);
+    width: 160%;
+    padding-left: 30%;
+    border-bottom: 3px solid black;
+    color: black;
+}
+.item1 .item_top{
+    background-image: url(car2.jpeg);
+}
+.item2 .item_top{
     background-color: lightcoral;
+    background-image: url(car3.jpg);
 }
-.item3{
+.item3 .item_top{
     background-color: lightgreen;
+    background-image: url(car4.jpg);
 }
-.item4{
+.item4 .item_top{
     background-color: lightseagreen;
+    background-image: url(car5.jpeg);
 }
-.item5{
+.item5 .item_top{
     background-color: lightgoldenrodyellow;
+    background-image: url(car2.jpeg);
 }
-.item6{
+.item6 .item_top{
     background-color: rgb(173, 112, 112);
+    background-image: url(car3.jpg);
 }
-.item7{
-    background-color: rgb(252, 166, 194);
+.item7 .item_top{
+    background-image: url(car2.jpeg);
 }
-.item8{
+.item8 .item_top{
     background-color: rgb(157, 145, 238);
+    background-image: url(car5.jpeg);
 }
-.item9{
+.item9 .item_top{
     background-color: rgb(162, 250, 241);
+    background-image: url(car2.jpeg);
 }
-.item10{
+.item10 .item_top{
     background-color: rgb(219, 111, 132);
+    background-image: url(car2.jpeg);
 }
-.item11{
+.item11 .item_top{
     background-color: rgb(194, 241, 146);
+    background-image: url(car2.jpeg);
 }
-.item12{
+.item12 .item_top{
+    background-image: url(car2.jpeg);
     
 }
 
 .header{
-    grid-area: 1 / 1 / 2 /5;
+    grid-area: 1 / 1 / 2 /7;
     background-color: blue;
 }
 .footer{
-    grid-column: 1 / span 4;
+    grid-column: 1 / span 6;
     background-color: violet;
 }
